@@ -6,5 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular-Basics-Components';
+ ApplicationList :any=[];
+  newApplicationName="";
+  newApplicationContent="";
+
+onAddEnvironment()
+{
+  console.log(this.newApplicationName);
+  this.ApplicationList.push(
+    {
+      Type: "Environment",
+      Name:this.newApplicationName,
+      Content:this.newApplicationContent
+    }
+  )
+}
+onAddApplication()
+{
+  this.ApplicationList.push(
+    {
+      Type:'Application',
+      Name:this.newApplicationName,
+      Content:this.newApplicationName
+    }
+  )
+}
+
 }
