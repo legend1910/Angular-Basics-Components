@@ -1,6 +1,10 @@
 <div class="container">
   <div class="row">
-  <app-base-component></app-base-component>
+  <app-base-component 
+  (ApplicationCreated)="onAddApplicationAdded($event)" 
+  (EnvironmentCreated)="onAddApplicationAdded($event)"
+  >
+</app-base-component>
  
   <hr>
   <div class="row">
