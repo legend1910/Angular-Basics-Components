@@ -1,34 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <p> Add New Application or Environment </p>
-      <label> Application Name</label>
-      <input type="text" class="form-Control" [(ngModel)] ="newApplicationName">
-      <br>
-      <br>
-      <label> Application Content</label>
-      <input type="text" class="form-Control" [(ngModel)]="newApplicationContent">
-      <br>
-      <button class="btn btn-primary" (click)="onAddApplication()">
- Add Application
-</button>
-      <button class="btn btn-primary" (click)="onAddEnvironment()"> Add Environment</button>
-
-    </div>
+  <app-base-component></app-base-component>
  
   <hr>
   <div class="row">
     <div class="col-xs-12">
-<div class="panel panel-default" *ngFor="let Data of ApplicationList">
+<!-- We are sending the data from the ngFor  to the element which is defined in the application Component where we have 
+defined a element property with the @input-->
+<app-application-component *ngFor="let Data of ApplicationList" [element]="Data">
 
-  <div class="panel-heading">{{Data.Name}}</div>
-  <div class="panel-body">
-  <p>
-    <strong *ngIf="Data.Type=='Application'" style="color: red;"> {{Data.Content}}</strong>
-    <em *ngIf="Data.Type=='Environment'" style="color:slateblue;"> {{Data.Content}}</em>
-  </p>
-  </div>
-</div>
-    </div>
+</app-application-component>
   </div>
 </div>

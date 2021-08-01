@@ -1,0 +1,17 @@
+<div class="row">
+<div class="col-xs-12">
+    <p> Add New Application or Environment </p>
+    <label> Application Name</label>
+    <input type="text" class="form-Control" [(ngModel)] ="newApplicationName">
+    <br>
+    <br>
+    <label> Application Content</label>
+    <input type="text" class="form-Control" [(ngModel)]="newApplicationContent">
+    <br>
+    <button class="btn btn-primary" (click)="onAddApplication()">
+Add Application
+</button>
+    <button class="btn btn-primary" (click)="onAddEnvironment()"> Add Environment</button>
+
+  </div>
+</div>

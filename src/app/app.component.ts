@@ -6,30 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- ApplicationList :any=[];
-  newApplicationName="";
-  newApplicationContent="";
+  // These : are not type we are assigin value i.e Key/Value pair
+ ApplicationList=[{Type:'Application',Name:'Test Application', Content:'Just a Application'}];
 
-onAddEnvironment()
-{
-  console.log(this.newApplicationName);
-  this.ApplicationList.push(
-    {
-      Type: "Environment",
-      Name:this.newApplicationName,
-      Content:this.newApplicationContent
-    }
-  )
-}
-onAddApplication()
-{
-  this.ApplicationList.push(
-    {
-      Type:'Application',
-      Name:this.newApplicationName,
-      Content:this.newApplicationName
-    }
-  )
-}
+
+
 
 }
