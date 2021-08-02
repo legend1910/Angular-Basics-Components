@@ -12,7 +12,14 @@
 <!-- We are sending the data from the ngFor  to the element which is defined in the application Component where we have 
 defined a element property with the @input-->
 <app-application-component *ngFor="let Data of ApplicationList" [element]="Data">
-
+  <!--
+    to pass a complex HTMl Code into a component from outside which you dont want to set up in the component  and want it to happen
+    withing the component tag
+  -->
+  <p>
+    <strong *ngIf="Data.Type=='Application'" style="color: red;"> {{Data.Content}}</strong>
+    <em *ngIf="Data.Type=='Environment'" style="color:slateblue;"> {{Data.Content}}</em>
+  </p>
 </app-application-component>
   </div>
 </div>
