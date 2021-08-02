@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output,EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-base-component',
@@ -17,17 +17,20 @@ export class BaseComponentComponent implements OnInit {
   @Output() EnvironmentCreated= new EventEmitter<{AppName:string,ContentData:string}>();
   newApplicationName="";
   newApplicationContent="";
-
+  @ViewChild('ApplicationContent')ApplicationContent!: ElementRef;
   constructor() { }
 
   ngOnInit(): void {
   }
-  onAddApplication()
+  onAddApplication( _ApplicationName: HTMLInputElement)
   {
+    console.log(_ApplicationName.value)
 this.ApplicationCreated.emit(
   {
-    AppName:this.newApplicationName,
-    ContentData: this.newApplicationContent
+    AppName:_ApplicationName.value,
+    ContentData: this.ApplicationContent.nativeElement.value
+    //ContentData: this.ApplicationContent // will send the object not the value
+
   });
   }
   onAddEnvironment()
@@ -35,7 +38,7 @@ this.ApplicationCreated.emit(
     this.EnvironmentCreated.emit(
       {
         AppName:this.newApplicationName,
-        ContentData: this.newApplicationContent
+        ContentData: this.ApplicationContent.nativeElement.value
       });
   }
 }

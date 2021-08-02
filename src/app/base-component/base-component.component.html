@@ -2,13 +2,19 @@
 <div class="col-xs-12">
     <p> Add New Application or Environment </p>
     <label> Application Name</label>
-    <input type="text" class="form-Control" [(ngModel)] ="newApplicationName">
-    <br>
+    <!--<input type="text" class="form-Control" [(ngModel)] ="newApplicationName">-->
+    <!-- Another way to pass the value  is by creating a refrence value which will be used only in this template
+       <input type="text" class="form-Control" #ApplicationName> will send the enitre element
+    -->
+    <input type="text" class="form-Control" #ApplicationName>
+   <br>
     <br>
     <label> Application Content</label>
-    <input type="text" class="form-Control" [(ngModel)]="newApplicationContent">
+   <!-- <input type="text" class="form-Control" [(ngModel)]="newApplicationContent">-->
+   <!--Another way to pass value is using viewChild()  -->
+   <input type="text" class="form-Control" #ApplicationContent>
     <br>
-    <button class="btn btn-primary" (click)="onAddApplication()">
+    <button class="btn btn-primary" (click)="onAddApplication(ApplicationName)">
 Add Application
 </button>
     <button class="btn btn-primary" (click)="onAddEnvironment()"> Add Environment</button>

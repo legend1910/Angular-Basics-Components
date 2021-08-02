@@ -7,28 +7,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // These : are not type we are assigin value i.e Key/Value pair
- ApplicationList=[{Type:'Application',Name:'Test Application', Content:'Just a Application'}];
+  ApplicationList = [{ Type: 'Application', Name: 'Test Application', Content: 'Just a Application' }];
 
- onAddEnvironmentAdded(EnvironmentData:{AppName:string,ContentData:string})
- {
-  this.ApplicationList.push(
-    {
-      Type:'Environment',
-      Name:EnvironmentData.AppName,
-      Content:EnvironmentData.ContentData
-    })
- }
- onAddApplicationAdded(ApplicationData:{AppName:string,ContentData:string})
- {
-   
-   this.ApplicationList.push(
-     {
-       Type:'Application',
-       Name:ApplicationData.AppName,
-       Content:ApplicationData.ContentData
-     }
-   )
- }
+  onAddEnvironmentAdded(EnvironmentData: { AppName: string, ContentData: string }) {
+    this.ApplicationList.push(
+      {
+        Type: 'Environment',
+        Name: EnvironmentData.AppName,
+        Content: EnvironmentData.ContentData
+      })
+  }
+  onAddApplicationAdded(ApplicationData: { AppName: string, ContentData: string }) {
+
+    this.ApplicationList.push(
+      {
+        Type: 'Application',
+        Name: ApplicationData.AppName,
+        Content: ApplicationData.ContentData
+      }
+    )
+  }
 
 
 }
