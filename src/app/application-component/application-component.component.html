@@ -5,9 +5,11 @@
         {{element.Name}}
     </div>
     <div class="panel-body">
-    <p>
-      <strong *ngIf="element.Type=='Application'" style="color: red;"> {{element.Content}}</strong>
-      <em *ngIf="element.Type=='Environment'" style="color:slateblue;"> {{element.Content}}</em>
-    </p>
+      <!--      buliding reusable widget  like a tab where each tab will have content from other source where you dont
+      want to use property Binding
+      project into your component 
+      -->
+
+   <ng-content></ng-content>
     </div>
   </div>
